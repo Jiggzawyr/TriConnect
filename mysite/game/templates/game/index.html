@@ -1,0 +1,81 @@
+{% extends 'game/base.html' %}
+
+{% block main_content %}
+
+{% load static %}
+<img id="empty_img" src="{% static 'game/images/empty.png' %}" style="display: none">
+<img id="triangle_img" src="{% static 'game/images/triangle.png' %}" style="display: none">
+<img id="square_img" src="{% static 'game/images/square.png' %}" style="display: none">
+<img id="circle_img" src="{% static 'game/images/circle.png' %}" style="display: none">
+<audio id="background_music" loop>
+  <source src="{% static 'game/sounds/background.mp3' %}" type="audio/mp3">
+</audio>
+<audio id="roll_sound">
+  <source src="{% static 'game/sounds/roll.wav' %}" type="audio/wav">
+</audio>
+
+<div class="column left">
+    <div class="block">
+        <div class="info">
+            <span id="message"></span>
+            <span id="player"></span>
+        </div>
+        <div id="log" class="info"></div>
+    </div>
+
+    <br>
+
+    <div class="block">
+        <button id="roll_button" class="btn" hidden>Roll</button>
+        <button id="skip_button" class="btn" hidden>Skip</button>
+    </div>
+
+
+    <br>
+
+    <div class="block">
+        <div id="rolled_number" class="rolled_number"></div>
+    </div>
+
+    <div class="block">
+        <button id="start_game_button" class="btn" >Start game</button>
+    </div>
+
+    <div class="block">
+        <button id="play_again_button" class="btn" onClick="window.location.reload();" hidden>Play again</button>
+    </div>
+
+</div>
+
+<div class="column middle">
+  <table id="game_table" class="game_table">
+  {% for i in range %}
+  <tr>
+    {% for j in range %}
+    {% load static %}
+    <td id="{{i}}{{j}}"><img class="empty" src="{% static 'game/images/empty.png' %}" style="max-height:100%; max-width:100%;"></td>
+    {% endfor %}
+  </tr>
+  {% endfor %}
+  </table>
+</div>
+
+<div class="column right">
+
+    <div class="rules">
+        <h2>Rules</h2>
+        <ul>
+            <li>Game is played by three player</li>
+            <li>In first phase players take turns and places pieces on empty fields on the board</li>
+            <li>In second phase players take turns, roll a number (1-6) and move one of their pieces in any direction for exactly that number of fields</li>
+            <li>Piece cannot be moved in a direction that is blocked by another player's pieces</li>
+            <li>If players cannot make a valid move they skip their turn</li>
+            <li>First player to connect his pieces in a horizontal, vertical or diagonal line is the winner</li>
+        </ul>
+
+    </div>
+
+</div>
+
+
+{% endblock %}

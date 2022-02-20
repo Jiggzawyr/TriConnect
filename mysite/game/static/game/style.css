@@ -1,0 +1,83 @@
+body {
+    font-family: monospace;
+    color: gold;
+    background: black;
+}
+
+.game_table {
+  width: 100%;
+  margin:auto;
+  border-collapse: collapse;
+  border-style: hidden;
+  background-color:rgba(0, 0, 0, 0);
+}
+
+.game_table td {
+  width: 4%;
+  position:relative;
+  padding-top:0;
+  padding-bottom:0;
+}
+
+.game_table td {
+    border: 6px solid gold;
+}
+
+.empty{
+    opacity: 0;
+}
+
+.column {
+  float: left;
+  width: 33.33%;
+}
+
+.left{
+  width: 30%;
+}
+
+.right {
+  width: 30%;
+}
+
+.middle {
+  width: 40%;
+}
+
+.block {
+  display: block;
+  padding: 10px 0;
+  height: 100px;
+  text-align: center;
+}
+
+.btn{
+    width: 60%;
+    height: 80px;
+    border-radius: 8px;
+    font-size: 32px;
+    background-color: black;
+    color: gold;
+    border: 4px solid gold;
+}
+
+.rolled_number{
+    font-size: 48px;
+}
+
+.info{
+    font-size: 24px;
+}
+
+.rules{
+    margin: 25px;
+    padding: 15px;
+    border: 4px solid gold;
+}
+
+.rules h2{
+    font-size: 32px;
+    text-align: center;
+}
+
+

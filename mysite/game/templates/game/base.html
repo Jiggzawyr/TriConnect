@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+{% load static %}
+
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'game/style.css' %}">
+    <script type="text/javascript" src="{% static 'game/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'game/script.js' %}"></script>
+</head>
+<body>
+
+<hr>
+    <header >
+        <h1 style="text-align: center">Tri-connect</h1>
+    </header>
+<hr>
+
+{% block main_content %}
+{% endblock %}
+
+</body>
+</html>
